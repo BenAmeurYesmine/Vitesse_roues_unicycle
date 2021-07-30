@@ -1,0 +1,22 @@
+<launch>
+  <!--  -->
+  <node pkg="test" type="base_controller" name="base_controller1"  output="screen">
+    
+    <rosparam file="$(find test)/config/param1.yaml" />
+    <remap from="cmd_vel" to="cmd_vel1"/>
+    <remap from="vitesse/droite" to="vitesse/droite1"/>
+    <remap from="vitesse/gauche" to="vitesse/gauche1"/>
+    <remap from="/base_controller/rayon_robot" to="/base_controller1/rayon_robot"/>
+    <remap from="/base_controller/rayon_roue" to="/base_controller1/rayon_roue"/>
+  </node>
+
+
+ <node pkg="test" type="base_controller" name="base_controller2"  output="screen">
+    <rosparam file="$(find test)/config/param2.yaml" command="load"/>
+    <remap from="cmd_vel" to="cmd_vel2"/>
+    <remap from="vitesse/droite" to="vitesse/droite2"/>
+    <remap from="vitesse/gauche" to="vitesse/gauche2"/>
+    <remap from="/base_controller/rayon_robot" to="/base_controller2/rayon_robot"/>
+    <remap from="/base_controller/rayon_roue" to="/base_controller2/rayon_roue"/>
+  </node>
+</launch>
