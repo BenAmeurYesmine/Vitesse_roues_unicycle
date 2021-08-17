@@ -16,6 +16,12 @@ ros::Time last_time;
 ros::Publisher v_droite;
 ros::Publisher v_gauche;
 
+/**
+ * @brief cette fonction retourne la vitesse angulaire de chaque roue du robot
+ * 
+ * @param twist_aux est la vitesse du robot 
+ */
+
 void vitesseCallback(const geometry_msgs::Twist &twist_aux) {
   geometry_msgs::Twist twist = twist_aux;
   float vitesse_x = twist_aux.linear.x;   // vitesse lineaire v
